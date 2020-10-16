@@ -2,6 +2,7 @@ import Axios from "axios";
 import React, { Component } from "react";
 import { apiurl, key } from "../../api";
 import ImgCard from "../elements/ImgCard";
+import Loading from "../elements/Loading";
 
 export default class Landing extends Component {
   constructor(props) {
@@ -14,10 +15,6 @@ export default class Landing extends Component {
   }
 
   componentDidMount() {
-    this.funGetImages();
-  }
-
-  componentDidUpdate() {
     this.funGetImages();
   }
 
@@ -47,7 +44,7 @@ export default class Landing extends Component {
         return false
     }
     else{
-        this.setState({ page: newPage });
+        this.setState({ page: newPage },()=>{this.funGetImages()});
     }
   };
 
@@ -61,11 +58,17 @@ export default class Landing extends Component {
         </div>
 
         <div className="py-3">
-                <input type="text" className="form-control w-50 mx-auto rounded-pill border-0" 
+                <input type="text" className="form-control w-50 mx-auto rounded-pill border-0 bg-dark text-light" 
                 placeholder="Search"/>
         </div>
 
-        <div className="content-holder py-3">
+        <div className="my-3">
+              {
+                this.state.imgList.length === 0 ? (<Loading/>) : null
+              }
+        </div>
+
+        <div className="content-holder my-3">
           {this.state.imgList &&
             this.state.imgList.map((img) => <ImgCard key={img.id} img={img} />)}
         </div>
