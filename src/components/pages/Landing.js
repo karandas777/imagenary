@@ -61,8 +61,8 @@ export default class Landing extends Component {
         </div>
 
         <div className="py-3">
-                <input type="text" className="form-control text-center w-50 mx-auto rounded-pill" 
-                placeholder="The internet’s source of freely-usable images."/>
+                <input type="text" className="form-control w-50 mx-auto rounded-pill border-0" 
+                placeholder="Search"/>
         </div>
 
         <div className="content-holder py-3">
@@ -70,18 +70,18 @@ export default class Landing extends Component {
             this.state.imgList.map((img) => <ImgCard key={img.id} img={img} />)}
         </div>
 
-        <div className="py-4 text-center">
+        <div className="py-4 d-flex justify-content-around">
           <button
             className="btn btn-link text-danger text-decoration-none"
             onClick={()=>{this.funChangePage(-1)}}
           >
-            Prev
+            <i className="fa fa-backward text-light"></i> Prev
           </button>
           <button
             className="btn btn-link text-danger text-decoration-none"
             onClick={()=>{this.funChangePage(1)}}
           >
-            Next
+            Next <i className="fa fa-forward text-light"></i>
           </button>
         </div>
 

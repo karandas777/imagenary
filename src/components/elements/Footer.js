@@ -3,12 +3,17 @@ import React, { Component } from "react";
 export default class Footer extends Component {
   render() {
     return (
-      <div className="rounded-top bg-danger py-2">
-        <div className="pt-2 text-center h4 sty-font text-light">
-          imagenary.
-        </div>
-        <div className="text-light text-center small">
-          The internet’s source of freely-usable images.
+      <div>
+        <div className="mt-5 mx-0 p-3 radius-top bg-dark">
+          <div className="h4 sty-font text-light">
+            <span className="text-danger">image</span>nary
+            <span className="text-danger">.</span>
+          </div>
+          <div className="text-light">
+            <span className="mr-2 badge badge-danger">The internet’s source of freely-usable images.</span>
+            <span className="mr-2 badge badge-danger">Powered by : Unsplash.</span>
+            <span className="mr-2 badge badge-danger">Designed by : Karan Das.</span>
+          </div>
         </div>
       </div>
     );

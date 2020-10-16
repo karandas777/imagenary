@@ -34,17 +34,21 @@ body {
   min-height: 100vh;
 }
 
+.radius-top{
+  border-radius: 15px 15px 0px 0px;
+}
+
 
 @media screen and (max-width:600px){
  
   .content-holder{
-    column-count: 3;
-    column-gap: 6px;
+    column-count: 2;
+    column-gap: 8px;
   }
   
   .content-item{
-    margin-top:3px;
-    margin-bottom:3px;
+    margin-top:4px;
+    margin-bottom:4px;
   }
   
   .custom-p{
