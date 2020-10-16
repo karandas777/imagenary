@@ -1,13 +1,55 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Paytone+One&display=swap');
+
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  background-color: black;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.sty-font{
+  font-family: 'Paytone One', sans-serif;
+}
+
+/* layout */
+
+.content-holder{
+  column-count: 5;
+  column-gap: 20px;
+}
+
+.content-item{
+  width: 100%;
+  display: inline-block;
+  margin-top:10px;
+  margin-bottom:10px;
+}
+
+.custom-p{
+  padding-right: 50px;
+  padding-left: 50px;
+}
+
+.min-height{
+  min-height: 100vh;
+}
+
+
+@media screen and (max-width:600px){
+ 
+  .content-holder{
+    column-count: 3;
+    column-gap: 6px;
+  }
+  
+  .content-item{
+    margin-top:3px;
+    margin-bottom:3px;
+  }
+  
+  .custom-p{
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+  
 }
