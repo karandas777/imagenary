@@ -1,5 +1,6 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Paytone+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Barcode+128&display=swap');
 
 
 body {
@@ -7,14 +8,20 @@ body {
   background-color: black;
 }
 
+/* fonts */
+
 .sty-font{
   font-family: 'Paytone One', sans-serif;
+}
+
+.code-font{
+  font-family: 'Libre Barcode 128', cursive;
 }
 
 /* layout */
 
 .content-holder{
-  column-count: 5;
+  column-count: 3;
   column-gap: 20px;
 }
 

@@ -24,7 +24,8 @@ export default class Landing extends Component {
     Axios.get(`${apiurl}${method}${key}`, {
       params: {
         page: this.state.page,
-        per_page: 25,
+        per_page: 24,
+        h:"300",
         order_by: "popular",
       },
     })
