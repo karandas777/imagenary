@@ -4,7 +4,7 @@ import Landing from './components/pages/Landing';
 
 function App() {
   return (
-   <div className="custom-p">
+   <div>
       <Landing/>
       <Footer/>
    </div>

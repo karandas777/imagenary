@@ -4,7 +4,7 @@ export default class Footer extends Component {
   render() {
     return (
       <div>
-        <div className="mt-5 mx-0 p-3 radius-top bg-dark">
+        <div className="mt-5 mx-3 p-3 radius-top bg-dark">
           <div className="h4 sty-font text-light">
             <span className="text-danger">image</span>nary
             <span className="text-danger">.</span>

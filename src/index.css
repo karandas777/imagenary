@@ -1,11 +1,13 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Paytone+One&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Libre+Barcode+128&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Barcode+128+Text&display=swap');
 
 
 body {
   margin: 0;
   background-color: black;
+  font-family: 'Roboto';
 }
 
 /* fonts */
@@ -15,21 +17,21 @@ body {
 }
 
 .code-font{
-  font-family: 'Libre Barcode 128', cursive;
+  font-family: 'Libre Barcode 128 Text', cursive;
 }
 
 /* layout */
 
 .content-holder{
-  column-count: 3;
-  column-gap: 20px;
+  column-count: 4;
+  column-gap: 28px;
 }
 
 .content-item{
   width: 100%;
   display: inline-block;
-  margin-top:10px;
-  margin-bottom:10px;
+  margin-top:14px;
+  margin-bottom:14px;
 }
 
 .custom-p{
@@ -45,17 +47,25 @@ body {
   border-radius: 15px 15px 0px 0px;
 }
 
+.on-mobile{
+  font-size: 16px;
+}
+
+.bg-trans{
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
 
 @media screen and (max-width:600px){
  
   .content-holder{
-    column-count: 2;
-    column-gap: 8px;
+    column-count: 1;
+    column-gap: 0px;
   }
   
   .content-item{
-    margin-top:4px;
-    margin-bottom:4px;
+    margin-top:5px;
+    margin-bottom:5px;
   }
   
   .custom-p{
@@ -63,4 +73,7 @@ body {
     padding-left: 10px;
   }
   
+  .on-mobile{
+    font-size: 12px;
+  }
 }
