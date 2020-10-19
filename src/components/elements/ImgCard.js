@@ -8,7 +8,7 @@ export default class ImgCard extends Component {
       <div className="content-item bg-light p-1 rounded">
         <img src={urls.small} alt={alt_description} className="w-100 rounded" />
         <div className="px-0 pt-1">
-          <div className="p-0 m-1">
+          <div className="p-0 m-1 on-mobile ">
             <img
               src={user.profile_image.small}
               className="rounded-pill shadow-sm mr-2 mb-1"
@@ -16,17 +16,17 @@ export default class ImgCard extends Component {
               width="30"
               alt="user"
             />
-            <span className="on-mobile text-muted">{user.name}</span>
+            <span className="text-muted">{user.name}</span>
           </div>
           <div className="d-flex justify-content-between p-0 m-1">
-            <span className="code-font text-muted on-mobile mb-0 mt-1">
+            <span className="code-font text-muted mb-0">
               {id}
             </span>
             <a
-              className="text-decoration-none mb-1"
+              className="text-decoration-none"
               href={`${links.download}?force=true`}
-            ><span className="badge badge-light shadow-sm rounded-pill">
-                  <i className="fa fa-arrow-down text-muted fa-2x"></i>
+            ><span className="badge badge-secondary shadow-sm h5 mb-0 rounded">
+                  <i className="fa fa-arrow-down"></i>
             </span>
             </a>
           </div>

@@ -2,8 +2,8 @@ import Axios from "axios";
 import React, { Component } from "react";
 import { apiurl, key } from "../../api";
 import ImgCard from "../elements/ImgCard";
-import JumboTron from "../elements/JumboTron";
 import Loading from "../elements/Loading";
+import Logo from "../elements/Logo";
 
 export default class Landing extends Component {
   constructor(props) {
@@ -26,7 +26,6 @@ export default class Landing extends Component {
       params: {
         page: this.state.page,
         per_page: 21,
-        h: "300",
         order_by: "recent",
       },
     })
@@ -54,17 +53,13 @@ export default class Landing extends Component {
   render() {
     return (
       <div className="min-height">
-        {
-          this.state.imgList.length > 0 ? (
-            <JumboTron bgImg={this.state.imgList[0].urls.regular} />
-          ) : null
-        }
+        <Logo firstText="the" lastText="wall" info="Latest uploads from our users" />
 
         <div className="my-3">
           {this.state.imgList.length === 0 ? <Loading /> : null}
         </div>
 
-        <div className="content-holder my-3 pt-5 custom-p">
+        <div className="content-holder my-3 custom-p">
           {this.state.imgList &&
             this.state.imgList.map((img) => <ImgCard key={img.id} img={img} />)}
         </div>
