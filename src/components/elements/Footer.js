@@ -9,9 +9,8 @@ export default class Footer extends Component {
             <span className="text-danger">image</span>nary
             <span className="text-danger">.</span>
           </div>
-          <div className="small">
-            <span className="mr-2">Designed by : Karan Das.</span><br/>
-            <span className="mr-2">Powered by : Unsplash.</span>
+          <div className="small text-muted">
+            <span className="">Powered by : Unsplash.</span>
           </div>
         </div>
       </div>

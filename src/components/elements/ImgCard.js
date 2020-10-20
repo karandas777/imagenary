@@ -6,17 +6,17 @@ export default class ImgCard extends Component {
 
     return (
       <div className="content-item bg-light p-1 rounded">
-        <img src={urls.small} alt={alt_description} className="w-100 rounded" />
+        <img src={urls.regular} alt={alt_description} className="w-100 rounded" />
         <div className="px-0 pt-1">
-          <div className="p-0 m-1 on-mobile ">
+          <div className="p-0 m-1 d-flex justify-content-between">
             <img
-              src={user.profile_image.small}
+              src={user.profile_image.medium}
               className="rounded-pill shadow-sm mr-2 mb-1"
               height="30"
               width="30"
               alt="user"
             />
-            <span className="text-muted">{user.name}</span>
+            <span className="text-muted mb-0 mt-1">{user.name}</span>
           </div>
           <div className="d-flex justify-content-between p-0 m-1">
             <span className="code-font text-muted mb-0">

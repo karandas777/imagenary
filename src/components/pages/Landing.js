@@ -1,6 +1,7 @@
 import Axios from "axios";
 import React, { Component } from "react";
 import { apiurl, key } from "../../api";
+import Header from "../elements/Header";
 import ImgCard from "../elements/ImgCard";
 import Loading from "../elements/Loading";
 import Logo from "../elements/Logo";
@@ -12,6 +13,7 @@ export default class Landing extends Component {
     this.state = {
       imgList: [],
       page: 1,
+      loading: false,
     };
   }
 
@@ -20,18 +22,21 @@ export default class Landing extends Component {
   }
 
   funGetImages = () => {
+
+    this.setState({ loading: true });
+
     const method = "/photos";
 
     Axios.get(`${apiurl}${method}${key}`, {
       params: {
         page: this.state.page,
-        per_page: 21,
+        per_page: 20,
         order_by: "recent",
       },
     })
       .then((res) => {
         console.log(res);
-        this.setState({ imgList: res.data });
+        this.setState({ imgList: res.data, loading:false });
       })
       .catch((err) => {
         console.log(err);
@@ -53,35 +58,38 @@ export default class Landing extends Component {
   render() {
     return (
       <div className="min-height">
+        <Header/>
         <Logo firstText="the" lastText="wall" info="Latest uploads from our users" />
 
-        <div className="my-3">
-          {this.state.imgList.length === 0 ? <Loading /> : null}
-        </div>
+        <div className="my-3">{this.state.loading ? <Loading /> : null}</div>
 
         <div className="content-holder my-3 custom-p">
           {this.state.imgList &&
             this.state.imgList.map((img) => <ImgCard key={img.id} img={img} />)}
         </div>
 
-        <div className="py-4 d-flex justify-content-around">
-          <button
-            className="btn btn-link text-danger text-decoration-none"
-            onClick={() => {
-              this.funChangePage(-1);
-            }}
-          >
-            <i className="fa fa-backward text-light"></i> Prev
-          </button>
-          <button
-            className="btn btn-link text-danger text-decoration-none"
-            onClick={() => {
-              this.funChangePage(1);
-            }}
-          >
-            Next <i className="fa fa-forward text-light"></i>
-          </button>
-        </div>
+        {
+        this.state.imgList.length > 0 ? (
+          <div className="py-4 d-flex justify-content-around">
+            <button
+              className="btn btn-link text-danger text-decoration-none"
+              onClick={() => {
+                this.funChangePage(-1);
+              }}
+            >
+              <i className="fa fa-backward text-light"></i> Prev
+            </button>
+            <button
+              className="btn btn-link text-danger text-decoration-none"
+              onClick={() => {
+                this.funChangePage(1);
+              }}
+            >
+              Next <i className="fa fa-forward text-light"></i>
+            </button>
+          </div>
+        ) : null
+        }
       </div>
     );
   }

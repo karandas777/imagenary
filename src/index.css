@@ -6,7 +6,7 @@
 
 body {
   margin: 0;
-  background-color: black;
+  background-color: rgb(31, 31, 31);
   font-family: 'Montserrat';
 }
 
@@ -47,25 +47,26 @@ body {
   border-radius: 15px 15px 0px 0px;
 }
 
-.on-mobile{
-  display: block;
+.loader{
+  height: 50px;
+  width: 50px;
 }
 
 .bg-trans{
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 
 @media screen and (max-width:600px){
  
   .content-holder{
-    column-count: 2;
-    column-gap: 8px;
+    column-count: 1;
+    column-gap: 0px;
   }
   
   .content-item{
-    margin-top:4px;
-    margin-bottom:4px;
+    margin-top:5px;
+    margin-bottom:5px;
   }
   
   .custom-p{
@@ -73,7 +74,4 @@ body {
     padding-left: 10px;
   }
   
-  .on-mobile{
-    display: none;
-  }
 }

@@ -24,13 +24,13 @@ export default class Header extends Component {
         </button>
         <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div className="navbar-nav ml-auto">
-            <Link className="nav-item nav-link" to="/">
+            <Link className="nav-item nav-link text-dark" to="/">
               Home
             </Link>
-            <Link className="nav-item nav-link" to="/search">
+            <Link className="nav-item nav-link text-dark" to="/search">
               Search
             </Link>
-            <Link className="nav-item nav-link" to="/topics">
+            <Link className="nav-item nav-link text-dark" to="/topics">
               Topics
             </Link>
           </div>

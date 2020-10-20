@@ -4,6 +4,7 @@ import { apiurl, key } from "../../api";
 import Axios from "axios";
 import ImgCard from "../elements/ImgCard";
 import Loading from "../elements/Loading";
+import Header from "../elements/Header";
 
 export default class Search extends Component {
   constructor(props) {
@@ -26,7 +27,7 @@ export default class Search extends Component {
       params: {
         query: this.state.query,
         page: this.state.page,
-        per_page: 21,
+        per_page: 20,
         order_by: "recent",
       },
     })
@@ -54,6 +55,7 @@ export default class Search extends Component {
   render() {
     return (
       <div className="min-height">
+        <Header/>
         <Logo firstText="the" lastText="finder" info="Search from millions of images." />
 
         <div className="py-3 text-center col-md-5 mx-auto">
