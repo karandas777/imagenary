@@ -17,7 +17,7 @@ export default class TopicCard extends Component {
           <div className="text-center mt-2">
             <a
               className="text-decoration-none"
-              href="#"
+              href="/"
             ><span className="badge badge-danger shadow-sm h5 mb-0 rounded">
                   <i className="fa fa-arrow-right"></i>
             </span>
