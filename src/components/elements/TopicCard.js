@@ -12,8 +12,17 @@ export default class TopicCard extends Component {
           alt={title}
         />
         <div className="p-1">
-          <div className="h5 mt-1">{title}</div>
-          <div className="small text-muted">{description}</div>
+          <div className="h5 mt-2">{title}</div>
+          <div className="very-small text-muted">{description}</div>
+          <div className="text-center mt-2">
+            <a
+              className="text-decoration-none"
+              href="#"
+            ><span className="badge badge-danger shadow-sm h5 mb-0 rounded">
+                  <i className="fa fa-arrow-right"></i>
+            </span>
+            </a>
+          </div>
         </div>
       </div>
     );

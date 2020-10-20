@@ -14,27 +14,17 @@ export default class Header extends Component {
           />
           image<span className="text-dark">nary</span>.
         </span>
-        <button
-          className="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarNavAltMarkup"
-        >
-          <span className="navbar-toggler-icon"></span>
-        </button>
-        <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-          <div className="navbar-nav ml-auto">
-            <Link className="nav-item nav-link text-dark" to="/">
-              Home
+          <div className="ml-auto">
+            <Link className="text-decoration-none text-dark mr-3" to="/">
+              <i className="fa fa-home"></i><span className="hide-on text-muted ml-2">Home</span>
             </Link>
-            <Link className="nav-item nav-link text-dark" to="/search">
-              Search
+            <Link className="text-decoration-none text-dark mr-3" to="/search">
+              <i className="fa fa-search"></i><span className="hide-on text-muted ml-2">Search</span>
             </Link>
-            <Link className="nav-item nav-link text-dark" to="/topics">
-              Topics
+            <Link className="text-decoration-none text-dark" to="/topics">
+              <i className="fa fa-th"></i><span className="hide-on text-muted ml-2">Topics</span>
             </Link>
           </div>
-        </div>
       </nav>
     );
   }

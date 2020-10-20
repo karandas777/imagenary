@@ -79,6 +79,7 @@ export default class Landing extends Component {
             >
               <i className="fa fa-backward text-light"></i> Prev
             </button>
+            <span className="bg-light px-2 py-1 rounded shadow-sm sty-font text-danger">{this.state.page}</span>
             <button
               className="btn btn-link text-danger text-decoration-none"
               onClick={() => {

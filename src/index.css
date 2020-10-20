@@ -52,8 +52,12 @@ body {
   width: 50px;
 }
 
-.bg-trans{
-  background-color: rgba(0, 0, 0, 0.8);
+.hide-on{
+  display: inline;
+}
+
+.very-small{
+  font-size: 10px;
 }
 
 
@@ -74,4 +78,7 @@ body {
     padding-left: 10px;
   }
   
+  .hide-on{
+    display: none;
+  }
 }
