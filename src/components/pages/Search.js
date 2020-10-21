@@ -18,6 +18,10 @@ export default class Search extends Component {
     };
   }
 
+  componentDidMount(){
+    window.scrollTo(0,0);
+  }
+
   funSearchImages = () => {
     this.setState({ loading: true });
 
@@ -32,7 +36,6 @@ export default class Search extends Component {
       },
     })
       .then((res) => {
-        console.log(res);
         this.setState({ imgList: res.data.results, loading: false });
       })
       .catch((err) => {
@@ -61,7 +64,7 @@ export default class Search extends Component {
         <div className="py-3 text-center col-md-5 mx-auto">
           <input
             type="text"
-            className="form-control rounded-pill border-0 bg-dark text-light"
+            className="form-control rounded border-0 shadow-sm"
             onChange={(e) => {
               this.setState({ query: e.target.value });
             }}
@@ -69,7 +72,7 @@ export default class Search extends Component {
           />
           <br />
           <button
-            className="btn btn-danger btn-sm shadow-sm rounded-pill"
+            className="btn bg-custom-3 text-custom-2 btn-sm shadow-sm rounded"
             onClick={this.funSearchImages}
           >
             <i className="fa fa-search fa-2x"></i>
@@ -87,21 +90,21 @@ export default class Search extends Component {
         this.state.imgList.length > 0 ? (
           <div className="py-4 d-flex justify-content-around">
             <button
-              className="btn btn-link text-danger text-decoration-none"
+              className="btn btn-link text-custom-3 text-decoration-none"
               onClick={() => {
                 this.funChangePage(-1);
               }}
             >
-              <i className="fa fa-backward text-light"></i> Prev
+              <i className="fa fa-backward"></i> Prev
             </button>
-            <span className="bg-light px-2 py-1 rounded shadow-sm sty-font text-danger">{this.state.page}</span>
+            <span className="bg-custom-3 text-custom-2 px-2 py-1 rounded shadow-sm sty-font">{this.state.page}</span>
             <button
-              className="btn btn-link text-danger text-decoration-none"
+              className="btn btn-link text-custom-3 text-decoration-none"
               onClick={() => {
                 this.funChangePage(1);
               }}
             >
-              Next <i className="fa fa-forward text-light"></i>
+              Next <i className="fa fa-forward"></i>
             </button>
           </div>
         ) : null

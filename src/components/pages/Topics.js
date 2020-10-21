@@ -17,6 +17,7 @@ export default class Topics extends Component {
   }
 
   componentDidMount() {
+    window.scrollTo(0,0);
     this.funGetTopics();
   }
 
@@ -31,13 +32,17 @@ export default class Topics extends Component {
       },
     })
       .then((res) => {
-        console.log(res);
         this.setState({ topicList: res.data , loading:false });
       })
       .catch((err) => {
         console.log(err);
       });
   };
+
+  getImages=(id,title)=>{
+      const name = title.toLowerCase();
+      this.props.history.push(`/topic-details/${id}/${name}`);
+  }
 
   render() {
     return (
@@ -54,7 +59,7 @@ export default class Topics extends Component {
         <div className="content-holder my-3 custom-p">
           {this.state.topicList &&
             this.state.topicList.map((topic) => (
-              <TopicCard key={topic.id} topic={topic} />
+              <TopicCard key={topic.id} topic={topic} getImages={this.getImages}/>
             ))}
         </div>
         

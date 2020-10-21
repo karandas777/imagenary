@@ -18,6 +18,7 @@ export default class Landing extends Component {
   }
 
   componentDidMount() {
+    window.scrollTo(0,0);
     this.funGetImages();
   }
 
@@ -35,7 +36,6 @@ export default class Landing extends Component {
       },
     })
       .then((res) => {
-        console.log(res);
         this.setState({ imgList: res.data, loading:false });
       })
       .catch((err) => {
@@ -59,7 +59,7 @@ export default class Landing extends Component {
     return (
       <div className="min-height">
         <Header/>
-        <Logo firstText="the" lastText="wall" info="Latest uploads from our users" />
+        <Logo firstText="the" lastText="latest" info="Recent uploads from our users" />
 
         <div className="my-3">{this.state.loading ? <Loading /> : null}</div>
 
@@ -72,21 +72,21 @@ export default class Landing extends Component {
         this.state.imgList.length > 0 ? (
           <div className="py-4 d-flex justify-content-around">
             <button
-              className="btn btn-link text-danger text-decoration-none"
+              className="btn btn-link text-custom-3 text-decoration-none"
               onClick={() => {
                 this.funChangePage(-1);
               }}
             >
-              <i className="fa fa-backward text-light"></i> Prev
+              <i className="fa fa-backward"></i> Prev
             </button>
-            <span className="bg-light px-2 py-1 rounded shadow-sm sty-font text-danger">{this.state.page}</span>
+            <span className="bg-custom-3 text-custom-2 px-2 py-1 rounded shadow-sm sty-font">{this.state.page}</span>
             <button
-              className="btn btn-link text-danger text-decoration-none"
+              className="btn btn-link text-custom-3 text-decoration-none"
               onClick={() => {
                 this.funChangePage(1);
               }}
             >
-              Next <i className="fa fa-forward text-light"></i>
+              Next <i className="fa fa-forward"></i>
             </button>
           </div>
         ) : null
